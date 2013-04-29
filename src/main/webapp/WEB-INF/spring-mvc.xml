@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+    <!-- To process controllers with @Controller annotation -->
+    <mvc:annotation-driven/>
+    <!-- Spring Component Scanning of controller package-->
+    <context:component-scan base-package="com.xcompany.xassignment" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+ 	
+    <!--    Temp - Will be removed
+            <mvc:view-controller path="/login" view-name="user.login"/>
+            <mvc:view-controller path="/" view-name="/home"/>
+    -->
+    <!-- default handler for serving static resources -->
+<!--    <mvc:default-servlet-handler/>
+     static resources 
+    <mvc:resources location="/static/js/" mapping="/js/**"/>
+    <mvc:resources location="/static/styles/" mapping="/styles/**"/>
+    <mvc:resources location="/static/images/" mapping="/images/**"/>-->
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!--<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>-->
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    
+
+    
+    
+    <bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+    <!--
+    The index controller.
+    -->
+    
+
+</beans>
