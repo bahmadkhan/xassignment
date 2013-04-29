@@ -26,7 +26,14 @@ Project can be run using maven. But there are little more information to conside
 2.  Maven as a repository management tool is used, so it should be downloaded and installed. Installation details are given [here](http://maven.apache.org/download.cgi) 
 3.  Go to project clone root folder in command prompt and execute `mvn install tomcat:run`. This will run project by executing Tests first. Tests will create a default user 'admin@admin.com' with password 'JTO33'. User can login as a 'ROLE_ADMIN' from this account.
 
-
-
+Technologies used
+--------------------------------------
+1. Java
+2. Spring IOC
+3. Spring MVC
+4. Spring Security
+5. JPA as a ORM (Hibernate as an implementation)
+6. MySql
+7. Maven
 
 **Lot of changes need to be done in this architecture (like comments and javadoc). But due to shortage of time, my main focus was on completing the assignment.**
