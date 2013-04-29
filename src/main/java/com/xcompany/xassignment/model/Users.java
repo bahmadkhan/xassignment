@@ -29,13 +29,13 @@ public class Users implements Serializable {
     private static final long serialVersionUID = 1001L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;    
+    private Long id;
     @Version
     private Long version;
     private String name;
     @NotNull
     @NotEmpty(message = "Email Cannot be Empty")
-    @Email(message="Email is not Valid")//Message should go in property files
+    @Email(message = "Email is not Valid")//Message should go in property files
     @Column(unique = true)
     private String email;
     private String password;

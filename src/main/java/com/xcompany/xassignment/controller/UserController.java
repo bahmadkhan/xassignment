@@ -63,7 +63,7 @@ public class UserController {
         userAccountService.createUser(user);
         return "redirect:/users";
     }
-    
+
     /////////////////////////////////////////// Delete /////////////////////////////////////////////    
     // Update Requestg
     @RequestMapping(value = "/users/{userId}/update", method = RequestMethod.GET)
@@ -90,7 +90,7 @@ public class UserController {
         modelMap.addAttribute("user", userAccountService.readUser(userId));
         return "view";
     }
-    
+
     /////////////////////////////////////////// Delete ///////////////////////////////////////////// 
     @RequestMapping(value = "/users/{userId}/delete", method = RequestMethod.DELETE)
     public String delete(ModelMap modelMap, @PathVariable("userId") Long userId) {

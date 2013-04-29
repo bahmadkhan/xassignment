@@ -44,13 +44,13 @@ public class CreateAdminTest {
         adminUser.setPassword(ADMIN_USER_PASSWORD);
         adminUser.setAuthority(ADMIN_USER_AUTHORITY);
         userDao.createUser(adminUser);
-        
+
         //Assertions
         Users dbAdminUser = userDao.readUser(adminUser.getId());
         assertEquals(dbAdminUser.getName(), ADMIN_USER_NAME);
         assertEquals(dbAdminUser.getEmail(), ADMIN_USER_EMAIL);
         assertEquals(dbAdminUser.getPassword(), ADMIN_USER_PASSWORD);
         assertEquals(dbAdminUser.getAuthority(), ADMIN_USER_AUTHORITY);
-        
+
     }
 }

@@ -19,8 +19,8 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service("userAccountService")
 @Transactional
-public class UserAccountServiceImpl implements UserAccountService{
-    
+public class UserAccountServiceImpl implements UserAccountService {
+
     private static final String ROLE_ADMIN = "ROLE_ADMIN";
     @Autowired
     UserAccountDao userAccountDao;
@@ -28,11 +28,11 @@ public class UserAccountServiceImpl implements UserAccountService{
     @Override
     @Secured(ROLE_ADMIN)
     public List<Users> readAllUsers() {
-       return userAccountDao.readAllUsers();
+        return userAccountDao.readAllUsers();
     }
 
     @Secured(ROLE_ADMIN)
-    @Override   
+    @Override
     public Long createUser(Users user) {
         return userAccountDao.createUser(user);
     }
@@ -52,19 +52,16 @@ public class UserAccountServiceImpl implements UserAccountService{
         dbUser.setAuthority(user.getAuthority());
         return userAccountDao.updateUser(dbUser);
     }
-    
+
     @Secured(ROLE_ADMIN)
     @Override
     public void deleteUser(Long userId) {
         Users user = readUser(userId);
         userAccountDao.deleteUser(user);
     }
-    
+
     @Secured(ROLE_ADMIN)
     @Override
     public void createRequest() {
-        
     }
-    
-    
 }

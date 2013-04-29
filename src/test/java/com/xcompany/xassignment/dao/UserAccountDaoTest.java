@@ -42,7 +42,7 @@ public class UserAccountDaoTest {
     private static final String USER_PASSWORD_UPDATE = "NewP@33W0RD";
     private static final Authority USER_AUTHORITY_UPDATE = Authority.ROLE_ADMIN;
 
-    @Test    
+    @Test
     public void testCreateAndReadUser() {
         //Creating User
         Users adminUser = new Users();
@@ -61,7 +61,7 @@ public class UserAccountDaoTest {
         assertEquals(dbAdminUser.getAuthority(), USER_AUTHORITY_CREATE);
     }
 
-    @Test    
+    @Test
     public void testUpdateUser() {
         //Creating User
         Users createdUser = new Users();
@@ -86,6 +86,7 @@ public class UserAccountDaoTest {
         assertEquals(dbUser.getPassword(), USER_PASSWORD_UPDATE);
         assertEquals(dbUser.getAuthority(), USER_AUTHORITY_UPDATE);
     }
+
     @Test
     public void testDeleteUser() {
         //Creating User
@@ -99,7 +100,7 @@ public class UserAccountDaoTest {
         assertNotNull(userId);
         Users dbUser = userDao.readUser(userId);
         userDao.deleteUser(dbUser);
-        Users deletedUser = userDao.readUser(userId);        
+        Users deletedUser = userDao.readUser(userId);
         assertNull(deletedUser);
     }
 }

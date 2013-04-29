@@ -41,7 +41,6 @@ public abstract class AbstractDao<T, ID extends Serializable> {
 
     public T persist(T entity) {
         entityManager.persist(entity);
-        System.out.println("ID: " + entity);
         return entity;
     }
 
